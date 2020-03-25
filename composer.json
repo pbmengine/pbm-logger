@@ -1,0 +1,47 @@
+{
+    "name": "pbmengine/pbm-logger",
+    "description": "PBM Logger",
+    "keywords": [
+        "pbm",
+        "pbm-logger"
+    ],
+    "homepage": "https://github.com/pbmengine/pbm-logger",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stefan Riehl",
+            "email": "stefan@personal-business-machine.com",
+            "homepage": "https://personal-business-machine.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "symfony/http-foundation": "^3.3|^4.1|^5.0",
+        "symfony/var-dumper": "^3.4|^4.0|^5.0",
+        "illuminate/support": "^5.7|^6.0|^7.0",
+        "monolog/monolog": "^1.0|^2.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^7.5.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pbmengine\\Logger\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pbmengine\\Logger\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
