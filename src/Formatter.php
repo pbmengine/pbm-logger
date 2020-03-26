@@ -41,7 +41,7 @@ class Formatter extends NormalizerFormatter
     {
         $result['level']        = Str::lower($record['level_name']);
         $result['message']      = $record['message'];
-        $result['report_time']  = $this->originalRecord['datetime']->__toString();
+        $result['report_time']  = $record['datetime'];
         $result['context']      = ! $this->isException($record) ? $record['context'] : [];
 
         if ($this->isException($record)) {
