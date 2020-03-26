@@ -57,14 +57,16 @@ class PbmHandler extends AbstractProcessingHandler
     {
         $client = new Client();
 
-        $client->request('POST', $this->apiEndpoint, [
-            'json' => $report,
-            'headers' => [
-                'Content-Type' => 'application/json',
-                'Accept' => 'application/json',
-                'apiKey' => $this->apiKey
-            ]
-        ]);
+        try {
+            $client->request('POST', $this->apiEndpoint, [
+                'json' => $report,
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                    'Accept' => 'application/json',
+                    'apiKey' => $this->apiKey
+                ]
+            ]);
+        } catch (\Exception $e) {}
     }
 
     protected function getDefaultFormatter(): FormatterInterface
