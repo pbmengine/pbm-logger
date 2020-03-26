@@ -56,12 +56,13 @@ class PbmHandler extends AbstractProcessingHandler
     protected function sendReportToApi(array $report)
     {
         $client = new Client();
-        $client->requestAsync('POST', $this->apiEndpoint, [
+
+        $client->request('POST', $this->apiEndpoint, [
             'json' => $report,
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json',
-                'ApiKey' => $this->apiKey
+                'apiKey' => $this->apiKey
             ]
         ]);
     }

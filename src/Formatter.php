@@ -51,7 +51,7 @@ class Formatter extends NormalizerFormatter
             $result['exception_file_content'] = file_exists($this->originalRecord['context']['exception']->getFile())
                     ? preg_split('/\r\n|\r|\n/', file_get_contents($this->originalRecord['context']['exception']->getFile()))
                     : '';
-            $result['exception_file_class'] = get_class($this->originalRecord['context']['exception']);
+            $result['exception_class'] = get_class($this->originalRecord['context']['exception']);
             $result['exception_trace'] = $record['context']['exception']['trace'];
         }
 
