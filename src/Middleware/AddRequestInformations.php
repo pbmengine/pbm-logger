@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logging\Middleware;
+namespace Pbmengine\Logger\Middleware;
 
 use Pbmengine\Logger\Contracts\Middleware;
 
