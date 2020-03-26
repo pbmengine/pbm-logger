@@ -10,11 +10,11 @@ class AddGitInformations implements Middleware
     public function handle(): array
     {
         return [
-            'branch' => $this->branch(),
-            'hash' => $this->hash(),
-            'tag' => $this->tag(),
-            'remote' => $this->remote(),
-            'message' => $this->message(),
+            'git_branch' => $this->branch(),
+            'git_hash' => $this->hash(),
+            'git_tag' => $this->tag(),
+            'git_remote' => $this->remote(),
+            'git_message' => $this->message(),
         ];
     }
 
