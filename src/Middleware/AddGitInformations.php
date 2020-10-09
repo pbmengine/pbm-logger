@@ -43,13 +43,17 @@ class AddGitInformations implements Middleware
         return $this->command('git config --get remote.origin.url');
     }
 
-    protected function command($command)
+    protected function command($command): ?string
     {
         $process = (new \ReflectionClass(Process::class))->hasMethod('fromShellCommandline')
-            ? Process::fromShellCommandline($command, base_path())
-            : new Process($command, base_path());
+            ? Process::fromShellCommandline($command, base_path(), null, null, 5)
+            : new Process($command, base_path(), null, null, 5);
 
-        $process->run();
+        try {
+            $process->run();
+        } catch (\Exception $e) {
+            return 'not detectable';
+        }
 
         return trim($process->getOutput());
     }
